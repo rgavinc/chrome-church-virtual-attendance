@@ -1,9 +1,10 @@
 // var app = chrome.runtime.getBackgroundPage();
 
-function hello() {
+const executeScript = () => {
   chrome.tabs.executeScript({
-    file: 'alert.js'
-  }); 
-}
+    file: "getList.js",
+  });
+  window.close();
+};
 
-document.getElementById('clickme').addEventListener('click', hello);
+document.querySelector("#clickme").addEventListener("click", executeScript);
